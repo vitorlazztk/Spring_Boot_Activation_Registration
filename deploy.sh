@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/java/Spring_Boot_Database_login
+cd /root/java/Spring_Boot_Activation_Registration
 echo Leszedem a GIT-ről a legfrisebb verziót
 git pull
 echo Kezdem a buildelést!
