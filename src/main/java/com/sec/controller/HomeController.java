@@ -64,11 +64,13 @@ public class HomeController {
 	@PostMapping("/reg")
     public String reg(@ModelAttribute User user) {
 		log.info("Uj user!");
-//		emailService.sendMessage(user.getEmail());
 		log.debug(user.getFullName());
 		log.debug(user.getEmail());
 		log.debug(user.getPassword());
-		userService.registerUser(user);
+		String regResult = userService.registerUser(user);
+		if(regResult.equals("ok")) {
+			emailService.sendMessage(user);
+		}	
         return "auth/login";
     }
 	
